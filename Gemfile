@@ -7,6 +7,7 @@ gem "rails", "~> 7.1.3"
 gem "sqlite3", "~> 1.4"
 gem "puma", ">= 5.0"
 gem "bootsnap", require: false
+gem 'rack-cors', require: 'rack/cors'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ]

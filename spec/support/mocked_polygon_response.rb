@@ -1,8 +1,8 @@
 class MockedPolygonResponse
-  def self.data(ticker: "AAPL", start_date: "2023-01-01", end_date: "2023-12-31")
+  def self.data
     {
       "status" => "OK",
-      "ticker" => ticker,
+      "ticker" => "TEST",
       "queryCount" => 1,
       "resultsCount" => 1,
       "adjusted" => true,
@@ -18,6 +18,17 @@ class MockedPolygonResponse
           "n" => 100
         }
       ],
+      "request_id": "request_id"
+    }.to_json
+  end
+
+  def self.empty
+    {
+      "status" => "OK",
+      "ticker" => "INVALID_TICKER",
+      "queryCount" => 0,
+      "resultsCount" => 0,
+      "adjusted" => true,
       "request_id": "request_id"
     }.to_json
   end

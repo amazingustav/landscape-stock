@@ -1,10 +1,13 @@
-require 'httparty'
-
 class PolygonClientService
+
+  def initialize(api_key)
+    @api_key = api_key
+    @base_uri = ENV['POLYGON_API_URL']
+  end
+
   def fetch_stock_data(ticker, start_date, end_date)
-    api_key = ENV['POLYGON_API_KEY']
-    url = "https://api.polygon.io/v2/aggs/ticker/#{ticker}/range/1/day/#{start_date}/#{end_date}?apiKey=#{api_key}"
-    response = HTTParty.get(url)
+    url = "#{@base_uri}/v2/aggs/ticker/#{ticker}/range/1/day/#{start_date}/#{end_date}"
+    response = HTTParty.get(url, query: { apiKey: @api_key })
 
     if response.code == 200
       JSON.parse(response.body)

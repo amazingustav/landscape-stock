@@ -1,8 +1,7 @@
-#!/bin/bash
-set -e
+#!/bin/bash -e
 
+set -e
 # Remove a potentially pre-existing server.pid for Rails.
 rm -f /landscape/tmp/pids/server.pid
 
-# Then exec the container's main process
-exec "$@"
+exec "${@}"

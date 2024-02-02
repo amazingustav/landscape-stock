@@ -24,7 +24,7 @@ Build the Docker containers and execute it by running the following command:
 
 ```shell
 $ docker-compose build --no-cache
-$ docker-compose up
+$ docker-compose up web
 ```
 Access the application by opening a web browser and navigating to http://localhost:3000.
 

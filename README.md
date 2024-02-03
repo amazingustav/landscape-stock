@@ -60,30 +60,24 @@ Example Response (Success):
 
 ```json
 {
-  "ticker": "AAPL",
-  "query_count": 1,
-  "results_count": 1,
-  "adjusted": true,
-  "results": [
-    {
-      "volume": 131704427,
-      "volume_weighted_average_price": 116.3058,
-      "open": 115.55,
-      "close": 115.97,
-      "high": 117.59,
-      "low": 114.13,
-      "timestamp": 1605042000000,
-      "number_of_items": 1150409
-    }
-  ]
+  "max_price": 199.62,
+  "min_price": 124.17,
+  "average_price": 172.55,
+  "max_volume": 154338835.0,
+  "min_volume": 24018404.0
 }
 ```
 
 Example Response (Error):
 
 ```json
+// Response status: 400
 {
   "error": "Start date must be before end date"
 }
 
+// Response status: 404
+{
+  "error": "No stock data found for ticker TEST"
+}
 ```

@@ -12,6 +12,7 @@ module LandscapeStock
     config.autoload_lib(ignore: %w(assets tasks))
     config.autoload_paths << Rails.root.join('app', 'third_party', 'services')
     config.autoload_paths << Rails.root.join('app', 'third_party', 'dtos')
+    config.autoload_paths << Rails.root.join('app', 'services', 'exceptions')
 
     config.api_only = true
   end

@@ -13,7 +13,9 @@ module Api
         service = StockService.new
         data = service.get_stocks(get_stock_request)
 
-        render json: data
+        render json: data.to_h, status: :ok
+      rescue NotFoundError => e
+        render json: { error: e.message }, status: :not_found
       rescue ArgumentError => e
         render json: { error: e.message }, status: :bad_request
       rescue StandardError => e

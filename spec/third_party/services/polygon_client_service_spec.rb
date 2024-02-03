@@ -1,5 +1,5 @@
 require "rails_helper"
-require_relative '../support/mocked_polygon_response'
+require_relative '../../support/mocked_polygon_response'
 
 RSpec.describe PolygonClientService do
   let(:service) { PolygonClientService.new("fake_api_key") }

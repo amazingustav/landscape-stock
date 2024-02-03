@@ -1,23 +1,35 @@
 class MockedPolygonResponse
-  def self.data
+  def self.data(custom_results: nil)
+    results = custom_results || [
+      {
+        "v" => 25,
+        "vw" => 200,
+        "o" => 10,
+        "c" => 5,
+        "h" => 10000,
+        "l" => 300,
+        "t" => 400,
+        "n" => 500
+      },
+      {
+        "v" => 1200,
+        "vw" => 4400,
+        "o" => 5500,
+        "c" => 6600,
+        "h" => 7700,
+        "l" => 8800,
+        "t" => 9900,
+        "n" => 10
+      }
+    ]
+
     {
       "status" => "OK",
       "ticker" => "TEST",
       "queryCount" => 1,
       "resultsCount" => 1,
       "adjusted" => true,
-      "results" => [
-        {
-          "v" => 100,
-          "vw" => 100,
-          "o" => 100,
-          "c" => 100,
-          "h" => 100,
-          "l" => 100,
-          "t" => 100,
-          "n" => 100
-        }
-      ],
+      "results" => results,
       "request_id": "request_id"
     }.to_json
   end
